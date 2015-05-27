@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>מתמטיקה למתחילים</title>
+  <link rel="Shortcut Icon" href="images/Calculator-icon.png" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+      function check() {
+          var flag = true;
+          var fname = document.sign.fullname.value;
+          if (fname != "" && fname.indexOf(" ") != -1) {
+              /*alert("full names working");*/
+              document.getElementById('invname').innerHTML = '';
+          }
+          else {
+              document.getElementById('invname').innerHTML = '*אנא הכנס שם מלא';
+              flag = false;
+          }
+          var Id = document.sign.ID.value;
+          if (Id == "" || Id.length == 9) {
+              /*alert("ID is fine");*/
+              document.getElementById('invid').innerHTML = '';
+          }
+          else {
+              document.getElementById('invid').innerHTML = '*ת.ז לא תיקנית';
+              flag = false;
+          }
+          var phone = document.sign.phone.value;
+          if (phone != "" && phone.indexOf("-") != -1 && (phone.length == 10 || phone.length == 11)) {
+              /*alert("phones ok");*/
+              document.getElementById('invphone').innerHTML = '';
+          }
+          else {
+              document.getElementById('invphone').innerHTML = '*אנא הכנס מספר טלפון תקין';
+              flag = false;
+          }
+          var mail = document.sign.mail.value;
+          if (mail.length > 4 && mail.indexOf("@") < mail.lastIndexOf(".") && mail.lastIndexOf(".") - mail.indexOf("@") > 1 && mail.split("@").length == 2) {
+              /*alert("mail is ok");*/
+              document.getElementById('invmail').innerHTML = '';
+          }
+          else {
+              document.getElementById('invmail').innerHTML = '*כתובת מייל לא תקינה';
+              flag = false;
+          }
+          var address = document.sign.address.value;
+          if ((address.length > 4 && address.split(" ").length >= 2) || address == "") {
+              /*alert("address is ok");*/
+              document.getElementById('invaddress').innerHTML = '';
+          }
+          else {
+              document.getElementById('invaddress').innerHTML = '*כתובת לא תקינה';
+              flag = false;
+          }
+          var pass = document.sign.pass.value;
+          var passconf = document.sign.passconf.value;
+          if (pass.length > 5) {
+              /*alert("pass is working");*/
+              document.getElementById('invpass').innerHTML = '';
+          }
+          else {
+              document.getElementById('invpass').innerHTML = '*אנא הכנס סיסמא בעלת 6 תווים או יותר';
+              flag = false;
+          }
+          if (pass == passconf) {
+              /*alert("passs maching");*/
+              document.getElementById('invmatch').innerHTML = '';
+          }
+          else {
+              document.getElementById('invmatch').innerHTML = '*הסיסמאות לא תואמות';
+              flag = false;
+          }
+          if (flag == true) {
+              /*alert("אחד או יותר מהשדות מולאו לא כראוי, שים/י לב כי יש להזין שם מלא, מספר טלפון כולל מקף, כתובת דואר אלקטרוני, כתובת הכוללת רחוב מספר בית ועיר וסיסמא בעלת שישה תווים או יותר. רק הסעיפים שמסומנים בכוכבית הם סעיפי חובה.");*/
+              document.sign.subbutton.disabled = false;
+          }
+      }
+      function disable() {
+          document.sign.subbutton.disabled = true;
+      }
+  </script>
+</head>
+<body>
+<div class="main">
+<div class="page">
+<div class="header"><img src="images/header.jpg" alt="" height="304" width="998"></div>
+<div class="content">
+<div class="leftpanel">
+<h2>תפריט ראשי</h2>
+<ul style="padding-bottom:100pt;">
+  <li style="border-top: medium none;"><a href="Main.html">עמוד ראשי</a></li>
+  <li><a href="SignUp.html">הרשמה</a></li>
+  <li><a href="hiburhisur.html">חיבור וחיסור</a></li>
+  <li><a href="kefelhiluk.html">כפל וחילוק</a></li>
+  <li><a href="test.html">מבחן</a></li>
+</ul>
+</div>
+<div class="rightpanel">
+<h1 class="title">הרשמה</h1>
+<p><form method="post" action="emailto:sample@gmail.com" name="sign">
+*שם מלא:  <input name="fullname" /> <label id="invname"></label><br />
+ת.ז:  <input name="ID" /><label id="invid"></label><br />
+*טלפון:  <input name="phone" value="כולל מקף" /><label id="invphone"></label><br />
+*כתובת דואר אלקטרוני:  <input name="mail" /><label id="invmail"></label><br />
+כתובת מגורים:  <input name="address" value="רחוב, מספר בית ועיר"/><label id="invaddress"></label><br />
+*סיסמא:  <input name="pass" value="6 תווים ומעלה"/><label id="invpass"></label><br />
+*אימות סיסמא:  <input name="passconf" /><label id="invmatch"></label><br />
+איך אתה מגדיר את רמת הידע במתמטיקה שלך כרגע?&nbsp;  <select><option>אין ידע</option><option>נמוכה</option><option>בינונית</option><option>גבוהה</option></select> <br />
+לאיזו מטרה הנך רוצה ללמוד?&nbsp; <select><option>ידע אישי</option><option>בית-ספר</option><option>אחר</option></select><br /><br />
+<button onclick="javascript:check()">בדיקת שדות</button>  <input type="submit" value="שלח" onclick="" name="subbutton" disabled="true"/>   <input type="reset" value="רוקן שדות" onclick="javascript:disable()"/>
+</form>
+<br /><br />
+* שדות חובה
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

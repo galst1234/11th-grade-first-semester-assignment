@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>מתמטיקה למתחילים</title>
+  <link rel="Shortcut Icon" href="images/Calculator-icon.png" />
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+      function checktest() {
+          var sum = 0;
+
+          var plus1 = document.test.plus1.value;
+          var plus2 = document.test.plus2.value;
+          var plus3 = document.test.plus3.value;
+          var plus4 = document.test.plus4.selectedIndex;
+
+          var minus1 = document.test.minus1.value;
+          var minus2 = document.test.minus2.value;
+          var minus3 = document.test.minus3.value;
+          var minus4 = document.test.minus4.selectedIndex;
+
+          var multy1 = document.test.multy1.value;
+          var multy2 = document.test.multy2.value;
+          var multy3 = document.test.multy3.value;
+          var multy4 = document.test.multy4.selectedIndex;
+
+          var div1 = document.test.div1.value;
+          var div2 = document.test.div2.value;
+          var div3 = document.test.div3.value;
+          var div4 = document.test.div4.selectedIndex;
+
+          if (plus1 == 3) {
+              sum++;
+              /*alert("+1");*/
+          }
+          if (plus2 == 6) {
+              sum++;
+              /*alert("+2");*/
+          }
+          if (plus3 == 8) {
+              sum++;
+              /*alert("+3");*/
+          }
+          if (plus4 == 1) {
+              sum++;
+              /*alert("+4");*/
+          }
+
+          if (minus1 == 3) {
+              sum++;
+              /*alert("-1");*/
+          }
+          if (minus2 == 2) {
+              sum++;
+              /*alert("-2");*/
+          }
+          if (minus3 == 6) {
+              sum++;
+              /*alert("-3");*/
+          }
+          if (minus4 == 2) {
+              sum++;
+              /*alert("-4");*/
+          }
+
+          if (multy1 == 0) {
+              sum++;
+              /*alert("*1");*/
+          }
+          if (multy2 == 8) {
+              sum++;
+              /*alert("*2");*/
+          }
+          if (multy3 == 7) {
+              sum++;
+              /*alert("*3");*/
+          }
+          if (multy4 == 0) {
+              sum++;
+              /*alert("*4");*/
+          }
+
+          if (div1 == 3) {
+              sum++;
+              /*alert("/1");*/
+          }
+          if (div2 == 2) {
+              sum++;
+              /*alert("/2");*/
+          }
+          if (div3 == 7) {
+              sum++;
+              /*alert("/3");*/
+          }
+          if (div4 == 1) {
+              sum++;
+              /*alert("/4");*/
+          }
+          /*alert("ענית נכון על " + sum + " שאלות מתוך 16! כל הכבוד!");*/
+          var corrections = "ענית נכון על " + sum + " שאלות מתוך 16! כל הכבוד!";
+          document.getElementById('answeres').innerHTML = corrections;
+      }
+  </script>
+</head>
+<body>
+<div class="main">
+<div class="page">
+<div class="header"><img src="images/header.jpg" alt="" height="304"
+ width="998"></div>
+<div class="content">
+<div class="leftpanel">
+<h2>תפריט ראשי</h2>
+<ul style="padding-bottom:100pt;">
+  <li style="border-top: medium none;"><a href="Main.html">עמוד ראשי</a></li>
+  <li><a href="SignUp.html">הרשמה</a></li>
+  <li><a href="hiburhisur.html">חיבור וחיסור</a></li>
+  <li><a href="kefelhiluk.html">כפל וחילוק</a></li>
+  <li><a href="test.html">מבחן</a></li>
+</ul>
+</div>
+<div class="rightpanel">
+<h1 class="title">מבחן</h1>
+<form name="test" action="emailto:idontreallycare@1234.6" method="post">
+<h4>חיבור</h4>
+3+0=<input name="plus1" /><br />
+4+2=<input name="plus2" /><br />
+7+1=<input name="plus3" /><br />
+5+4=<select name="plus4"><option>3</option><option>9</option><option>5</option></select><br /><br />
+<h4>חיסור</h4>
+3-0=<input name="minus1" /><br />
+4-2=<input name="minus2" /><br />
+7-1=<input name="minus3" /><br />
+5-4=<select name="minus4"><option>3</option><option>9</option><option>1</option></select><br /><br />
+<h4>כפל</h4>
+3*0=<input name="multy1" /><br />
+4*2=<input name="multy2" /><br />
+7*1=<input name="multy3" /><br />
+5*4=<select name="multy4"><option>20</option><option>9</option><option>50</option></select><br /><br />
+<h4>חילוק</h4>
+9/3=<input name="div1" /><br />
+4/2=<input name="div2" /><br />
+7/1=<input name="div3" /><br />
+36/9=<select name="div4"><option>3</option><option>4</option><option>5</option></select>
+</form><br />
+<button onclick="javascript:checktest()">בדיקה</button><label id="answeres"></label>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
